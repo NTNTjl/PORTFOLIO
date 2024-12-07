@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="background-rectangle"></div>
     <div class="container">
         <header>
             <h1>Nathan JULOU</h1>
@@ -103,12 +104,37 @@
                 </div>
             </div>
         </section>
+        <!-- Section du carrousel -->
+<section id="carousel" class="carousel">
+    <div class="carousel-container">
+        <button class="carousel-arrow left" id="carousel-left">&#9664;</button>
+        <div class="carousel-items">
+            <div class="carousel-item">
+                <h4>2023 - 2026</h4>
+                <p>Bachelor en ingénierie, systèmes d’information et stratégie marketing</p>
+                <p>EPF-cachan - Grade de licence niveau bac + 3</p>
+                <p>Ingénierie numérique : Python, HTML, CSS</p>
+            </div>
+            <div class="carousel-item">
+                <h4>Conception assistée par ordinateur</h4>
+                <p>Analyse : traitement statistique, data analyst et IA</p>
+                <p>Stockage : base de données, progiciels métiers (ERP, CRM)</p>
+            </div>
+            <div class="carousel-item">
+                <h4>Visualisation</h4>
+                <p>Power BI, datavisualisation, Business Intelligence</p>
+            </div>
+        </div>
+        <button class="carousel-arrow right" id="carousel-right">&#9654;</button>
+    </div>
+</section>
 
         <section id="contact" class="contact-form">
             <h2>Contactez-moi</h2>
             <form id="contact-form">
                 <input type="text" id="first-name" placeholder="Prénom" required>
                 <input type="text" id="last-name" placeholder="Nom" required>
+                <input type="text" id="email" placeholder="email" required>
                 <textarea id="message" placeholder="Message" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>

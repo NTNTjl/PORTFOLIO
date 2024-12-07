@@ -1,41 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Form validation and submission
+   
     const contactForm = document.getElementById('contact-form');
     
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Get form values
+        
         const firstName = document.getElementById('first-name').value.trim();
         const lastName = document.getElementById('last-name').value.trim();
+        const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
         
-        // Basic validation
+       
         if (firstName === '' || lastName === '' || message === '') {
             alert('Veuillez remplir tous les champs.');
             return;
         }
         
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
         alert(`Merci ${firstName} ${lastName}! Votre message a été envoyé.`);
         
-        // Reset the form
+        // Reset la forme
         contactForm.reset();
     });
 
-    // Project card click interaction (optional enhancement)
     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {
         const detailsButton = card.querySelector('.project-details');
         
         detailsButton.addEventListener('click', () => {
-            // Toggle flip class manually if needed
+
             card.classList.toggle('flipped');
             
-            // Optional: You could add more interaction here
-            // For example, opening a modal with more project details
+
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselContainer = document.querySelector('.carousel-items');
+    const leftArrow = document.getElementById('carousel-left');
+    const rightArrow = document.getElementById('carousel-right');
+
+    let currentIndex = 0;
+
+    const updateCarousel = () => {
+        const items = document.querySelectorAll('.carousel-item');
+        items.forEach((item, index) => {
+            if (index === currentIndex) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    };
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : carouselContainer.children.length - 1;
+        updateCarousel();
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex < carouselContainer.children.length - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    updateCarousel();
 });

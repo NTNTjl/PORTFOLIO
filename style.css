@@ -5,6 +5,10 @@
     --button-color: hsl(236, 32%, 26%);
     --button-hover-color: #fc2f70;
 }
+.projects {
+    margin: 0 auto; /* Centrer les cartes */
+    width: 90%; /* Largeur maximale des projets pour éviter qu'ils soient trop larges */
+}
 
 * {
     margin: 0;
@@ -30,7 +34,10 @@ header {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
+    position: relative;
     padding: 20px 0;
+    width: 131.5%;
+    left: -16%;
 }
 
 header h1 {
@@ -52,6 +59,19 @@ nav a {
 
 nav a:hover {
     color: var(--secondary-color);
+}
+
+.background-rectangle {
+        position: absolute;
+        top: 165px; /* Décalage depuis le haut de la section */
+        left: 0%; /* Décalage depuis la gauche de la section */
+        width: 100%; /* Largeur relative à la section */
+        height: 305px; /* Hauteur du rectangle */
+        background-image: url('giffond.gif'); /* Remplacez par le chemin de votre fichier GIF */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1; /* Place le rectangle derrière les projets */
 }
 
 /* Profile Photo */
@@ -130,7 +150,7 @@ nav a:hover {
     margin-top: 10px;
 }
 
-/* Buttons */
+/* Bouttons */
 .project-details, 
 .contact-form button {
     z-index: 1;
@@ -168,7 +188,50 @@ nav a:hover {
     transform: scaleX(1);
 }
 
-/* Contact Form */
+/* Styles pour le carrousel */
+.carousel {
+    margin: 50px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-items {
+    display: flex;
+    overflow: hidden;
+    width: 60%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: none; 
+    padding: 20px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.carousel-arrow:hover {
+    color: var(--button-hover-color);
+}
+
+
+/* Contact Forme */
 .contact-form {
     max-width: 500px;
     margin: 30px auto;
@@ -189,7 +252,10 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative; /* Maintient sa position normale */
+    position: absolute; /* Maintient sa position normale */
+    left: 0%;
+    width: 100%; /* Largeur de la page */
+
 }
 
 .social-icons {
